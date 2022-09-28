@@ -1,13 +1,26 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
+  NewCops: enable
 
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+Metrics/AbcSize:
+  Max: 55
 
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
+Metrics/MethodLength:
+  Max: 100
 
-Layout/LineLength:
-  Max: 120
+Metrics/BlockLength:
+  Max: 20
+  AllowedMethods: ['describe', 'context']
+
+Metrics/ModuleLength:
+  Max: 200
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Max: 5
