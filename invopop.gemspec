@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version = Invopop::VERSION
   spec.platform = Gem::Platform::RUBY
   spec.summary = 'Invopop API Ruby Client'
-  spec.homepage = 'https://github.com/invopop/invopop.ruby'
+  spec.homepage = 'https://github.com/invopop/client.ruby'
   spec.license = 'Apache-2.0'
   spec.authors = ['Sam Lown', 'Luismi Cavallé']
 

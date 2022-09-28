@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	name     = "invopop.ruby"
+	name     = "client.ruby"
 	runImage = "ruby:2.7"
 )
 

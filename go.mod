@@ -1,4 +1,4 @@
-module github.com/invopop/invopop.ruby
+module github.com/invopop/client.ruby
 
 go 1.18
 
