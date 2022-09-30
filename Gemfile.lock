@@ -2,16 +2,27 @@ PATH
   remote: .
   specs:
     invopop (0.1.0)
+      faraday (~> 2.5)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    crack (0.4.5)
+      rexml
     diff-lcs (1.5.0)
+    faraday (2.5.2)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.0)
+    hashdiff (1.0.1)
     json (2.6.2)
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+    public_suffix (5.0.0)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.6.0)
@@ -47,7 +58,12 @@ GEM
     rubocop-rspec (2.13.2)
       rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     unicode-display_width (2.3.0)
+    webmock (3.18.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
@@ -59,6 +75,7 @@ DEPENDENCIES
   rubocop (~> 1.21)
   rubocop-performance (~> 1.15)
   rubocop-rspec (~> 2.13)
+  webmock (~> 3.18)
 
 BUNDLED WITH
    2.1.4
