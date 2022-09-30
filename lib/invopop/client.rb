@@ -15,6 +15,10 @@ module Invopop
       @silo ||= Silo.new(conn)
     end
 
+    def transform
+      @transform ||= Transform.new(conn)
+    end
+
     private
 
     attr_accessor :conn
