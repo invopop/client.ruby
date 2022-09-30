@@ -11,6 +11,10 @@ module Invopop
       @utils ||= Utils.new(conn)
     end
 
+    def silo
+      @silo ||= Silo.new(conn)
+    end
+
     private
 
     attr_accessor :conn

@@ -12,6 +12,18 @@ module Invopop
       faraday.get(path, *params).body
     end
 
+    def post(path, body)
+      faraday.post(path, body).body
+    end
+
+    def put(path, body)
+      faraday.put(path, body).body
+    end
+
+    def patch(path, body)
+      faraday.patch(path, body).body
+    end
+
     private
 
     attr_accessor :access_token
@@ -30,6 +42,7 @@ module Invopop
 
       Faraday.new(options) do |f|
         f.response :json
+        f.request :json
       end
     end
   end

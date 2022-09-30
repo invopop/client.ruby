@@ -12,8 +12,8 @@ module Invopop
 
     attr_accessor :conn
 
-    def resource(klass)
-      resources[klass] = klass.new(conn, uri_fragment)
+    def resource(klass, id = nil)
+      resources[[klass, id]] = klass.new(conn, uri_fragment, id)
     end
 
     def resources
