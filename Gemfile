@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'gobl', git: 'https://github.com/invopop/gobl.ruby.git', branch: 'main'
+# TODO: `gobl` is now a runtime dependency of the gem. This entry needs to be moved to the
+# gemspec as soon as `gobl.ruby` is published to rubygems
+gem 'gobl', github: 'invopop/gobl.ruby', branch: 'main'
+
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.0'
 gem 'rubocop', '~> 1.21'
