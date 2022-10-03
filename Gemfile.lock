@@ -1,17 +1,71 @@
+GIT
+  remote: https://github.com/invopop/gobl.ruby.git
+  revision: fb33ee2ddeff697feea596a5f78b1c65b8fed887
+  branch: main
+  specs:
+    gobl (0.1.0)
+      activesupport (~> 6.1)
+      dry-files (~> 0.1.0)
+      dry-struct (~> 1.4.0)
+      dry-types (~> 1.5.1)
+      json (~> 2.6.1)
+      zeitwerk (~> 2.5.1)
+
 PATH
   remote: .
   specs:
     invopop (0.1.0)
+      faraday (~> 2.5)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (6.1.7)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    concurrent-ruby (1.1.10)
+    crack (0.4.5)
+      rexml
     diff-lcs (1.5.0)
+    dry-container (0.11.0)
+      concurrent-ruby (~> 1.0)
+    dry-core (0.8.1)
+      concurrent-ruby (~> 1.0)
+    dry-files (0.1.0)
+    dry-inflector (0.3.0)
+    dry-logic (1.2.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.5, >= 0.5)
+    dry-struct (1.4.0)
+      dry-core (~> 0.5, >= 0.5)
+      dry-types (~> 1.5)
+      ice_nine (~> 0.11)
+    dry-types (1.5.1)
+      concurrent-ruby (~> 1.0)
+      dry-container (~> 0.3)
+      dry-core (~> 0.5, >= 0.5)
+      dry-inflector (~> 0.1, >= 0.1.2)
+      dry-logic (~> 1.0, >= 1.0.2)
+    faraday (2.5.2)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.0)
+    hashdiff (1.0.1)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    ice_nine (0.11.2)
     json (2.6.2)
+    minitest (5.16.3)
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+    public_suffix (5.0.0)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.6.0)
@@ -47,18 +101,28 @@ GEM
     rubocop-rspec (2.13.2)
       rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
+    webmock (3.18.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  gobl!
   invopop!
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
   rubocop-performance (~> 1.15)
   rubocop-rspec (~> 2.13)
+  webmock (~> 3.18)
 
 BUNDLED WITH
    2.1.4
