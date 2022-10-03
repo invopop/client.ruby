@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe Invopop::Silo::Envelope do
-  subject(:envelope) do
-    described_class.new(
+  let(:data) do
+    {
       'id' => 'e875d2e3-40c2-11ed-8ff8-0268553ab26c',
       'created_at' => '2022-09-30T13:22:18.642Z',
       'updated_at' => '2022-09-30T13:27:42.966Z',
@@ -35,8 +35,10 @@ RSpec.describe Invopop::Silo::Envelope do
           'content' => 'Hello world!'
         }
       }
-    )
+    }
   end
+
+  include_examples 'Shared Struct Examples', :envelope
 
   it 'parses times as Time objects' do
     expect(envelope.created_at).to be_a(Time)

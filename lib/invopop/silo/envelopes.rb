@@ -11,20 +11,12 @@ module Invopop
         '/envelopes'
       end
 
-      def fetch(*args)
-        if single_resource?
-          Envelope.new(super)
-        else
-          EnvelopeCollection.new(super)
-        end
+      def build_struct(data)
+        Envelope.new(data)
       end
 
-      def create(*args)
-        Envelope.new(super)
-      end
-
-      def update(*args)
-        Envelope.new(super)
+      def build_collection(data)
+        EnvelopeCollection.new(data)
       end
     end
   end

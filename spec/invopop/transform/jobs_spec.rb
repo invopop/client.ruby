@@ -8,7 +8,7 @@ RSpec.describe Invopop::Transform::Jobs do
                          responding: { id: '123' }
 
     response = client.transform.jobs('123').fetch
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 
   it 'creates a job' do
@@ -17,7 +17,7 @@ RSpec.describe Invopop::Transform::Jobs do
                          responding: { id: '123' }
 
     response = client.transform.jobs.create(workflow_id: 234, envelope_id: 345)
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 
   it 'creates a job giving its ID' do
@@ -26,7 +26,7 @@ RSpec.describe Invopop::Transform::Jobs do
                          responding: { id: '123' }
 
     response = client.transform.jobs(123).create(workflow_id: 234, envelope_id: 345)
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 
   it 'creates a job providing a GOBL document' do
@@ -38,6 +38,6 @@ RSpec.describe Invopop::Transform::Jobs do
                          responding: { id: '123' }
 
     response = client.transform.jobs.create(workflow_id: 234, data: document)
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 end

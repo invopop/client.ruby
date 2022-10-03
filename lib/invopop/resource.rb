@@ -15,19 +15,29 @@ module Invopop
     attr_accessor :conn, :parent_fragment, :id
 
     def fetch(*params)
-      conn.get(path, *params)
-    end
+      data = conn.get(path, *params)
 
-    def create(body)
       if single_resource?
-        conn.put(path, body)
+        build_struct(data)
       else
-        conn.post(path, body)
+        build_collection(data)
       end
     end
 
+    def create(body)
+      data = if single_resource?
+               conn.put(path, body)
+             else
+               conn.post(path, body)
+             end
+
+      build_struct(data)
+    end
+
     def update(body)
-      conn.patch(path, body)
+      data = conn.patch(path, body)
+
+      build_struct(data)
     end
 
     def path
@@ -44,6 +54,18 @@ module Invopop
 
     def single_resource?
       !!id
+    end
+
+    # By default return the raw data. To be overriden in subclasses to wrap it in a single
+    # struct type
+    def build_struct(data)
+      data
+    end
+
+    # By default return the raw data. To be overriden in subclasses to wrap it in a struct
+    # collection type
+    def build_collection(data)
+      data
     end
   end
 end
