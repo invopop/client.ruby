@@ -19,7 +19,7 @@ func Setup() error {
 
 // Runs gem's rspec tests.
 func Spec() error {
-	return dockerRunCmd(name, "", "rake", "spec")
+	return dockerRunCmd(name, "", "bundle", "exec", "rake", "spec")
 }
 
 // Runs an interactive shell within a docker container.

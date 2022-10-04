@@ -8,15 +8,16 @@ RSpec.describe Invopop::Silo::Envelopes do
                          responding: { list: [{ id: '123' }, { id: '234' }] }
 
     response = client.silo.envelopes.fetch
-    expect(response).to eq({ 'list' => [{ 'id' => '123' }, { 'id' => '234' }] })
+    expect(response.list.size).to eq(2)
+    expect(response.list.first.id).to eq('123')
   end
 
   it 'fetches a specific envelope' do
     stub_invopop_request :get, '/silo/v1/envelopes/123',
                          responding: { id: '123' }
 
-    response = client.silo.envelopes('123').fetch
-    expect(response).to eq({ 'id' => '123' })
+    envelope = client.silo.envelopes('123').fetch
+    expect(envelope.id).to eq('123')
   end
 
   it 'creates an envelope' do
@@ -25,7 +26,7 @@ RSpec.describe Invopop::Silo::Envelopes do
                          responding: { id: '123' }
 
     response = client.silo.envelopes.create(data: { key: 'value' })
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 
   it 'creates an envelope from a GOBL document' do
@@ -37,7 +38,7 @@ RSpec.describe Invopop::Silo::Envelopes do
                          responding: { id: '123' }
 
     response = client.silo.envelopes.create(data: document)
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 
   it 'creates an envelope giving its ID' do
@@ -46,7 +47,7 @@ RSpec.describe Invopop::Silo::Envelopes do
                          responding: { id: '123' }
 
     response = client.silo.envelopes('123').create(data: { key: 'value' })
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 
   it 'updates an envelope' do
@@ -55,6 +56,6 @@ RSpec.describe Invopop::Silo::Envelopes do
                          responding: { id: '123' }
 
     response = client.silo.envelopes('123').update(data: { key: 'value' })
-    expect(response).to eq({ 'id' => '123' })
+    expect(response.id).to eq('123')
   end
 end

@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
   }
 
   spec.add_dependency 'faraday', '~> 2.5'
+  spec.add_dependency 'hashme', '~> 0.2.6'
 end

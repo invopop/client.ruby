@@ -10,6 +10,22 @@ module Invopop
       def uri_fragment
         '/envelopes'
       end
+
+      def fetch(*args)
+        if single_resource?
+          Envelope.new(super)
+        else
+          EnvelopeCollection.new(super)
+        end
+      end
+
+      def create(*args)
+        Envelope.new(super)
+      end
+
+      def update(*args)
+        Envelope.new(super)
+      end
     end
   end
 end
