@@ -10,6 +10,10 @@ module Invopop
       def uri_fragment
         '/jobs'
       end
+
+      def build_struct(data)
+        Job.new(data)
+      end
     end
   end
 end

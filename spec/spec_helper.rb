@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'support/stub_helpers'
 require_relative 'support/auth_helpers'
+require_relative 'support/struct_examples'
+require_relative 'support/stub_helpers'
 
 require 'invopop'
 

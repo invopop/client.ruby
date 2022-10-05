@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe Invopop::Silo::Attachment do
-  subject(:attachment) do
-    described_class.new(
+  let(:data) do
+    {
       'id' => 'e2b7a8b0-b14b-494f-a3c0-d9b1d1e5beeb',
       'created_at' => '2022-09-30T13:27:42.430Z',
       'name' => 'message.pdf',
@@ -11,8 +11,10 @@ RSpec.describe Invopop::Silo::Attachment do
       'size' => 8119,
       'stored' => true,
       'url' => 'https://silo.invopop.com/6HXS40DCEe2P-AJoVTqybA/4reosLFLSU-jwNmx0eW-6w/message.pdf?h=e420fe0b8eabffb5'
-    )
+    }
   end
+
+  include_examples 'Shared Struct Examples', :attachment
 
   it 'parses url as a URI object' do
     expect(attachment.url).to be_a(URI::HTTP)
