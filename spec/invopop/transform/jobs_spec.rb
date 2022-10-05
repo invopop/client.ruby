@@ -34,7 +34,7 @@ RSpec.describe Invopop::Transform::Jobs do
     document = GOBL::Document.embed(message)
 
     stub_invopop_request :post, 'transform/v1/jobs',
-                         with_body: { workflow_id: 234, data: document.to_gobl },
+                         with_body: { workflow_id: 234, data: document.as_json },
                          responding: { id: '123' }
 
     response = client.transform.jobs.create(workflow_id: 234, data: document)

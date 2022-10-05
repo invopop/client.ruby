@@ -4,9 +4,6 @@ require 'faraday'
 require 'gobl'
 require 'hashme'
 
-require_relative 'invopop/extensions/gobl'
-require_relative 'invopop/extensions/hashme'
-
 require_relative 'invopop/client'
 require_relative 'invopop/connection'
 require_relative 'invopop/namespace'

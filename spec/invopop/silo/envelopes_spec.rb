@@ -34,7 +34,7 @@ RSpec.describe Invopop::Silo::Envelopes do
     document = GOBL::Document.embed(message)
 
     stub_invopop_request :post, '/silo/v1/envelopes',
-                         with_body: { data: document.to_gobl },
+                         with_body: { data: document.as_json },
                          responding: { id: '123' }
 
     response = client.silo.envelopes.create(data: document)
