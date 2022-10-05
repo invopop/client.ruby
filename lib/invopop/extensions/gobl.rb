@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-raise 'The `gobl` library version has changed. Review if this extension still applies' if GOBL::VERSION != '0.1.0'
+raise 'The `gobl` library version has changed. Review if this extension still applies' if GOBL::VERSION != '0.1.3'
 
 # Temporary extensions for the `gobl` gem. To be removed when the library supports them.
 module GOBL
