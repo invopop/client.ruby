@@ -14,8 +14,8 @@ module Invopop
 
     attr_accessor :conn, :parent_fragment, :id
 
-    def fetch(*params)
-      data = conn.get(path, *params)
+    def fetch(params = {})
+      data = conn.get(path, params)
 
       if single_resource?
         build_struct(data)
@@ -24,18 +24,18 @@ module Invopop
       end
     end
 
-    def create(body)
+    def create(body, params = {})
       data = if single_resource?
-               conn.put(path, body)
+               conn.put(path, body, params)
              else
-               conn.post(path, body)
+               conn.post(path, body, params)
              end
 
       build_struct(data)
     end
 
-    def update(body)
-      data = conn.patch(path, body)
+    def update(body, params = {})
+      data = conn.patch(path, body, params)
 
       build_struct(data)
     end
