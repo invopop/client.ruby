@@ -43,6 +43,7 @@ module Invopop
       Faraday.new(options) do |f|
         f.response :json
         f.request :json
+        f.use Invopop::Connection::ErrorManager
       end
     end
   end
