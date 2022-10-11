@@ -7,6 +7,9 @@ AllCops:
   NewCops: enable
   SuggestExtensions: false
 
+Lint/UselessMethodDefinition: # This raises with useful method definitions (e.g. when the signature changes in an overriden method)
+  Enabled: false
+
 Metrics/AbcSize:
   Max: 55
 

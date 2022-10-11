@@ -5,14 +5,23 @@ module Invopop
     # Resource that represents jobs in the Invopop account, that is, instances of workflow
     # executions.
     class Jobs < Resource
-      public :fetch, :create
-
       def uri_fragment
         '/jobs'
       end
 
       def build_struct(data)
         Job.new(data)
+      end
+
+      def fetch
+        super
+      end
+
+      def create(workflow_id:, envelope_id: nil, data: nil, wait: nil)
+        super(
+          { workflow_id: workflow_id, envelope_id: envelope_id, data: data }.compact,
+          { wait: wait }.compact
+        )
       end
     end
   end
