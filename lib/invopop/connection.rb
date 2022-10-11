@@ -8,20 +8,26 @@ module Invopop
       self.access_token = access_token
     end
 
-    def get(path, *params)
-      faraday.get(path, *params).body
+    def get(path, params = {})
+      faraday.get(path, params).body
     end
 
-    def post(path, body)
-      faraday.post(path, body).body
+    def post(path, body, params = {})
+      faraday.post(path, body) do |req|
+        req.params = params
+      end.body
     end
 
-    def put(path, body)
-      faraday.put(path, body).body
+    def put(path, body, params = {})
+      faraday.put(path, body) do |req|
+        req.params = params
+      end.body
     end
 
-    def patch(path, body)
-      faraday.patch(path, body).body
+    def patch(path, body, params = {})
+      faraday.patch(path, body) do |req|
+        req.params = params
+      end.body
     end
 
     private
