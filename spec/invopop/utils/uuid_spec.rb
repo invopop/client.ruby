@@ -16,7 +16,7 @@ RSpec.describe Invopop::Utils::UUID do
                          with_query: { v: '1' },
                          responding: { 'uuid' => '123', 'version' => '1' }
 
-    response = client.utils.uuid.fetch(v: 1)
+    response = client.utils.uuid.fetch(version: 1)
     expect(response).to eq('uuid' => '123', 'version' => '1')
   end
 end

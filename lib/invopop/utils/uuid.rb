@@ -4,10 +4,12 @@ module Invopop
   class Utils
     # Resource that represent random UUIDs.
     class UUID < Resource
-      public :fetch
-
       def uri_fragment
         '/uuid'
+      end
+
+      def fetch(version: nil)
+        super({ v: version }.compact)
       end
     end
   end

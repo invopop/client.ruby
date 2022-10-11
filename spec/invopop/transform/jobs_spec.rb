@@ -47,7 +47,7 @@ RSpec.describe Invopop::Transform::Jobs do
                          with_body: { workflow_id: 234, envelope_id: 345 },
                          responding: { id: '123' }
 
-    response = client.transform.jobs.create({ workflow_id: 234, envelope_id: 345 }, wait: true)
+    response = client.transform.jobs.create(workflow_id: 234, envelope_id: 345, wait: true)
     expect(response.id).to eq('123')
   end
 end
