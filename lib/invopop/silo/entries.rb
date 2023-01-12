@@ -4,9 +4,9 @@ module Invopop
   class Silo
     # Resource that represent envelopes in the silo, that is, content entries in the
     # Invopop account.
-    class Envelopes < Resource
+    class Entries < Resource
       def uri_fragment
-        '/envelopes'
+        '/entries'
       end
 
       def fetch
@@ -22,11 +22,11 @@ module Invopop
       end
 
       def build_struct(data)
-        Envelope.new(data)
+        Entry.new(data)
       end
 
       def build_collection(data)
-        EnvelopeCollection.new(data)
+        EntryCollection.new(data)
       end
     end
   end

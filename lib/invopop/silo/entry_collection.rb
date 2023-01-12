@@ -2,10 +2,10 @@
 
 module Invopop
   class Silo
-    class EnvelopeCollection
+    class EntryCollection
       include Hashme
 
-      property :list, [Envelope]
+      property :list, [Entry]
       property :limit, Integer
       property :created_at, String
       property :next_created_at, String

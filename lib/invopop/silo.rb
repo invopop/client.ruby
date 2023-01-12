@@ -8,8 +8,8 @@ module Invopop
       '/silo/v1'
     end
 
-    def envelopes(id = nil)
-      resource(Envelopes, id)
+    def entries(id = nil)
+      resource(Entries, id)
     end
   end
 end

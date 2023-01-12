@@ -17,9 +17,9 @@ module Invopop
         super
       end
 
-      def create(workflow_id:, envelope_id: nil, data: nil, wait: nil)
+      def create(workflow_id:, silo_entry_id: nil, data: nil, wait: nil)
         super(
-          { workflow_id: workflow_id, envelope_id: envelope_id, data: data }.compact,
+          { workflow_id: workflow_id, silo_entry_id: silo_entry_id, data: data }.compact,
           { wait: wait }.compact
         )
       end

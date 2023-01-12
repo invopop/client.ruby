@@ -6,7 +6,7 @@ RSpec.describe Invopop::Transform::Job do
       'id' => '98dcd9f7-4313-11ed-8ff8-0268553ab26c',
       'created_at' => '2022-10-03T12:04:56.802Z',
       'updated_at' => '2022-10-03T12:04:58.015Z',
-      'envelope_id' => '98dcd9f7-4313-11ed-8ff8-0268553ab26c',
+      'silo_entry_id' => '98dcd9f7-4313-11ed-8ff8-0268553ab26c',
       'workflow_id' => '97de927f-07ab-4926-ae5f-04c05b4978a7',
       'tags' => %w[test message],
       'status' => 'OK',
