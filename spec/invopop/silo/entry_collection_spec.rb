@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Invopop::Silo::EnvelopeCollection do
+RSpec.describe Invopop::Silo::EntryCollection do
   let(:data) do
     {
       'list' => [
@@ -28,7 +28,7 @@ RSpec.describe Invopop::Silo::EnvelopeCollection do
 
   it 'parses `list` as an array of Envelope objects' do
     expect(collection.list.size).to eq(1)
-    expect(collection.list.first).to be_a(Invopop::Silo::Envelope)
+    expect(collection.list.first).to be_a(Invopop::Silo::Entry)
     expect(collection.list.first.id).to eq('9a4f46e9-40c8-11ed-8ff8-0268553ab26c')
   end
 end

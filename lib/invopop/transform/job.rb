@@ -9,7 +9,7 @@ module Invopop
       property :created_at, Time
       property :updated_at, Time
 
-      property :envelope_id, String
+      property :silo_entry_id, String
       property :workflow_id, String
 
       property :tags, [String]

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Invopop::Silo::Envelope do
+RSpec.describe Invopop::Silo::Entry do
   let(:data) do
     {
       'id' => 'e875d2e3-40c2-11ed-8ff8-0268553ab26c',

@@ -2,7 +2,7 @@
 
 module Invopop
   class Silo
-    class Envelope
+    class Entry
       include Hashme
 
       property :id, String
