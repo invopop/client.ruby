@@ -1,6 +1,6 @@
 # Invopop API Client
 
-Offical Ruby Client for the Invopop API
+Official Ruby Client for the Invopop API
 
 ## Installation
 
