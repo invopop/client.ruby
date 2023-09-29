@@ -4,7 +4,7 @@ PATH
     invopop (0.1.0)
       faraday (~> 2.5)
       gobl (~> 0.2)
-      hashme (~> 0.2.6)
+      hashme (~> 0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -27,12 +27,12 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.0)
-    gobl (0.6.2)
+    gobl (0.16.0)
       activesupport (>= 4)
-      hashme (>= 0.2.6)
+      hashme (>= 0.3.0)
       zeitwerk (>= 1)
     hashdiff (1.0.1)
-    hashme (0.2.6)
+    hashme (0.3.0)
       activemodel (>= 4.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
