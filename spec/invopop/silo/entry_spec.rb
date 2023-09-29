@@ -46,7 +46,7 @@ RSpec.describe Invopop::Silo::Entry do
   end
 
   it 'parses `meta` as a GOBL::Meta object' do
-    expect(envelope.meta).to be_a(GOBL::Org::Meta)
+    expect(envelope.meta).to be_a(GOBL::CBC::Meta)
     expect(envelope.meta['key']).to eq('value')
   end
 

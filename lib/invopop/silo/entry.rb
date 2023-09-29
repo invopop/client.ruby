@@ -13,7 +13,7 @@ module Invopop
       property :doc_schema, String
       property :digest, String
       property :tags, [String]
-      property :meta, GOBL::Org::Meta
+      property :meta, GOBL::CBC::Meta
       property :draft, Boolean
 
       property :attachments, [Attachment]

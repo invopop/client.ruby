@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.7'
   spec.required_rubygems_version = '>= 3.1.4'
 
-  spec.files = Dir.glob('lib/**/*') + [__FILE__]
+  spec.files = Dir['lib/**/*', 'README.md', __FILE__]
   spec.require_paths = ['lib']
 
   spec.metadata = {
@@ -22,6 +22,6 @@ Gem::Specification.new do |spec|
   }
 
   spec.add_dependency 'faraday', '~> 2.5'
-  spec.add_dependency 'gobl', '~> 0.2.0'
+  spec.add_dependency 'gobl', '~> 0.2'
   spec.add_dependency 'hashme', '~> 0.2.6'
 end
