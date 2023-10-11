@@ -34,7 +34,7 @@ entry.data #=> #<GOBL::Envelope $schema: "https://gobl.org/draft-0/envelope"…>
 
 # Add a GOBL document to the silo
 message = GOBL::Note::Message.new(content: 'Hello world!')
-document = GOBL::Document.embed(message)
+document = GOBL::Schema::Object.embed(message)
 invopop.silo.entries.create(data: document) #=> #<Invopop::Silo::Entry…>
 
 # Update a GOBL document

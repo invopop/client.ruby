@@ -31,7 +31,7 @@ RSpec.describe Invopop::Silo::Entries do
 
   it 'creates an envelope from a GOBL document' do
     message = GOBL::Note::Message.new(content: 'Hello, world!')
-    document = GOBL::Document.embed(message)
+    document = GOBL::Schema::Object.embed(message)
 
     stub_invopop_request :post, '/silo/v1/entries',
                          with_body: { data: document.as_json },

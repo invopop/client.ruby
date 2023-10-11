@@ -31,7 +31,7 @@ RSpec.describe Invopop::Transform::Jobs do
 
   it 'creates a job providing a GOBL document' do
     message = GOBL::Note::Message.new(content: 'Hello, world!')
-    document = GOBL::Document.embed(message)
+    document = GOBL::Schema::Object.embed(message)
 
     stub_invopop_request :post, 'transform/v1/jobs',
                          with_body: { workflow_id: 234, data: document.as_json },
