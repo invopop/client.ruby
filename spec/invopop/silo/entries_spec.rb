@@ -50,6 +50,18 @@ RSpec.describe Invopop::Silo::Entries do
     expect(response.id).to eq('123')
   end
 
+  it 'creates a correction' do
+    previous_id = 'aef83ed6-683b-11ee-8c99-0242ac120002'
+    correction = GOBL::Bill::CorrectionOptions.new(reason: 'Correction reason')
+
+    stub_invopop_request :put, 'silo/v1/entries/123',
+                         with_body: { previous_id: previous_id, correct: correction.as_json },
+                         responding: { id: '123' }
+
+    response = client.silo.entries('123').create(previous_id: previous_id, correct: correction)
+    expect(response.id).to eq('123')
+  end
+
   it 'updates an envelope' do
     stub_invopop_request :patch, '/silo/v1/entries/123',
                          with_body: { data: { key: 'value' } },

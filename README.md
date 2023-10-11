@@ -37,6 +37,12 @@ message = GOBL::Note::Message.new(content: 'Hello world!')
 document = GOBL::Schema::Object.embed(message)
 invopop.silo.entries.create(data: document) #=> #<Invopop::Silo::Entry…>
 
+# Create a corrective GOBL document in the silo
+invopop.silo.entries.create(
+  previous_id: '61371ed5-56ca-11ee-9d41-12d59aa0e29f',
+  correct: GOBL::Bill::CorrectionOptions.new(credit: true)
+) #=> #<Invopop::Silo::Entry…>
+
 # Update a GOBL document
 invopop.silo.entries("658c4ea1-9264-11ed-958a-52e43541c80c").update(data: document) #=> #<Invopop::Silo::Entry…>
 

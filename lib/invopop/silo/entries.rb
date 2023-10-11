@@ -13,8 +13,8 @@ module Invopop
         super
       end
 
-      def create(data:)
-        super
+      def create(data: nil, previous_id: nil, correct: nil)
+        super({ data: data, previous_id: previous_id, correct: correct }.compact)
       end
 
       def update(data:)
